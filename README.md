@@ -9,7 +9,7 @@ Simple registration form and login form created with bootstrap for the demostrat
 
 ### configuration
 
-- First off all paste the downloaded condeigniter directory inside server directory(e.g. for XAMPP xampp->htdocs folder)
+- First of all paste the downloaded condeigniter directory inside server directory(e.g. for XAMPP xampp->htdocs folder)
 
 - config codeigniter database connection in codeiniter->application->config->database.php
 
