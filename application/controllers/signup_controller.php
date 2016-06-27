@@ -74,8 +74,14 @@ class Signup_Controller extends CI_Controller {
         
     }
     
-    function confirmEmail(){
-        
+    function confirmEmail($hashcode){
+        if($this->Employee_Model->verifyEmail($hashcode)){
+            $this->session->set_flashdata('verify', '<div class="alert alert-success text-center">Email address is confirmed. Please login to the system</div>');
+            redirect('Login_Controller/index');
+        }else{
+            $this->session->set_flashdata('verify', '<div class="alert alert-danger text-center">Email address is not confirmed. Please try to re-register.</div>');
+            redirect('Login_Controller/index');
+        }
     }
     
 }

@@ -5,6 +5,7 @@
         <!-- left col -->
         </div>
         <div class="col-xs-6  well"> 
+            <?php echo $this->session->flashdata('login_msg'); ?>
             <?php echo form_open('Login_Controller/login'); ?>
             <fieldset>
                 <legend class="text-center">Login Form</legend>

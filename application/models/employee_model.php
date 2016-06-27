@@ -34,7 +34,7 @@ class Employee_Model extends CI_Model{
         
         //sending confirmEmail($receiver) function calling link to the user, inside message body
         $message = 'Dear User,</br></br> Please click on the below activation link to verify your email address<br><br>
-        http://www.localhost/codeigniter/Employee_Controller/confirmEmail/'. md5($receiver) .'</br></br>Thanks';
+        http://www.localhost/codeigniter/Signup_Controller/confirmEmail/'. md5($receiver) .'</br></br>Thanks';
         
         
         
