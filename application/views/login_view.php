@@ -39,7 +39,7 @@
                 <br>
                 <a href="<?php echo site_url(); ?>/Signup_Controller/index" >don't have an account, signup here</a>
             </div>
-            <?php echo $this->session->flashdata('login_msg'); ?>
+            
         </div>
         <div class="col-md-3">
              <!-- right col -->

@@ -6,6 +6,7 @@
             <fieldset>
                 <legend class="text-center">Employee Registration</legend>
                 <!-- employee name -->
+                <?php echo $this->session->flashdata('msg'); ?>
                 <div class="form-group">
                     <div class="row colbox">
                         <div class="col-xs-12 .col-md-8">
@@ -83,7 +84,7 @@
                  <br>
                 <a href="<?php echo site_url(); ?>/Login_Controller/" >Already signed up, Login</a>
             </div>
-            <?php echo $this->session->flashdata('msg'); ?>
+            
         </div>
     </div>
 
