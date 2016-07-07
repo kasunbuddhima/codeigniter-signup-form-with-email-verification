@@ -37,17 +37,30 @@ class Login_Controller extends CI_Controller {
             $password = md5($this->input->post('txt_password'));
             
             if($this->Employee_Model->loginUser($username, $password)){
+                
+                $userInfo = $this->Employee_Model->loginUser($username, $password);
+            
+                
+                    
+                
+                
                 $this->session->set_flashdata('login_msg', '<div class="alert alert-success text-center">Successfully logged in</div>');
-                $this->load->view('header');
-                $this->load->view('login_view');
-                $this->load->view('footer');
+                //$this->load->view('header');
+                //$this->load->view('tasks_view');
+                //$this->load->view('footer');
+                redirect('Task_Controller/index');
                 
             }else{
                 $this->session->set_flashdata('login_msg', '<div class="alert alert-danger text-center">Login Failed!! Please try again.</div>');
                 $this->load->view('header');
                 $this->load->view('login_view');
                 $this->load->view('footer');
+                
             }
         }
+    }
+    
+    public function logout(){
+        
     }
 }

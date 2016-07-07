@@ -6,6 +6,7 @@ class Employee_Model extends CI_Model{
         
         parent::__construct();
         $this->load->database();
+        $this->load->library('session');
     }
     
     //insert employee details to employee table
@@ -20,6 +21,20 @@ class Employee_Model extends CI_Model{
         $query = $this->db->get_where('employee', array('username' => $username, 'password' => $password,'status'=> 0));   //status sholud be 1
         
         if($query->num_rows() == 1){
+            
+            $userArr = array();
+            foreach($query->result() as $row){
+                $userArr[0] = $row->emp_id;
+                $userArr[1] = $row->emp_name;
+                
+            }
+            $userData = array(
+                'emp_id' => $userArr[0],
+                'emp_name' => $userArr[1],
+                'logged_in'=> TRUE
+            );
+            $this->session->set_userdata($userData);
+            
             return $query->result();
         }else{
             return false;
