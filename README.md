@@ -13,8 +13,6 @@ Simple registration form and login form created with bootstrap for the demostrat
 
 - config codeigniter database connection in codeiniter->application->config->database.php
 
-- Before create sending email functions
-open php>php.ini file and find 'extension=php_openssl.dll' then remove the semicolon at the begining of the line. Once done that restart the server.
 ```sh
 
 /* local server */
@@ -53,6 +51,11 @@ CREATE TABLE IF NOT EXISTS `employee` (
   PRIMARY KEY (`emp_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 ```
+
+- Before create sending email functions,
+open php>php.ini file and find 'extension=php_openssl.dll' then remove the semicolon at the begining of the line. Once done that restart the server.
+
+
 Configure email settings
 
 ```sh
