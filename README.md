@@ -59,7 +59,7 @@ open php>php.ini file and find 'extension=php_openssl.dll' then remove the semic
 Configure email settings
 
 ```sh
-	//config email settings
+//config email settings
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.gmail.com';
         $config['smtp_port'] = '465';
@@ -74,7 +74,7 @@ Configure email settings
 	$this->email->initialize($config);
 	
 	
-	//send email
+//send email
         $this->email->from($from);
         $this->email->to($receiver);
         $this->email->subject($subject);
