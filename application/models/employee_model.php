@@ -44,12 +44,12 @@ class Employee_Model extends CI_Model{
     
     //send confirm mail
     public function sendEmail($receiver){
-        $from = "sending_email";    //senders email address
+        $from = "your_email@gmail.com";    //senders email address
         $subject = 'Verify email address';  //email subject
         
         //sending confirmEmail($receiver) function calling link to the user, inside message body
-        $message = 'Dear User,</br></br> Please click on the below activation link to verify your email address<br><br>
-        http://www.localhost/codeigniter/Signup_Controller/confirmEmail/'. md5($receiver) .'</br></br>Thanks';
+        $message = 'Dear User,<br><br> Please click on the below activation link to verify your email address<br><br>
+        <a href=\'http://www.localhost/codeigniter/Signup_Controller/confirmEmail/'.md5($receiver).'\'>http://www.localhost/codeigniter/Signup_Controller/confirmEmail/'. md5($receiver) .'</a><br><br>Thanks';
         
         
         
@@ -58,13 +58,14 @@ class Employee_Model extends CI_Model{
         $config['smtp_host'] = 'ssl://smtp.gmail.com';
         $config['smtp_port'] = '465';
         $config['smtp_user'] = $from;
-        $config['smtp_pass'] = '****';  //sender's password
+        $config['smtp_pass'] = '******';  //sender's password
         $config['mailtype'] = 'html';
         $config['charset'] = 'iso-8859-1';
         $config['wordwrap'] = 'TRUE';
         $config['newline'] = "\r\n"; 
         
         $this->load->library('email', $config);
+		$this->email->initialize($config);
         //send email
         $this->email->from($from);
         $this->email->to($receiver);
@@ -72,7 +73,11 @@ class Employee_Model extends CI_Model{
         $this->email->message($message);
         
         if($this->email->send()){
-            echo "sent";
+			//for testing
+            echo "sent to: ".$receiver."<br>";
+			echo "from: ".$from. "<br>";
+			echo "protocol: ". $config['protocol']."<br>";
+			echo "message: ".$message;
             return true;
         }else{
             echo "email send failed";

@@ -14,6 +14,7 @@ class Signup_Controller extends CI_Controller {
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('Employee_Model');
+		$this->load->library('email');
     }
     
     public function index(){
