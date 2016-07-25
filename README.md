@@ -13,6 +13,8 @@ Simple registration form and login form created with bootstrap for the demostrat
 
 - config codeigniter database connection in codeiniter->application->config->database.php
 
+- Before create sending email functions
+open php>php.ini file and find 'extension=php_openssl.dll' then remove the semicolon at the begining of the line. Once done that restart the server.
 ```sh
 
 /* local server */
