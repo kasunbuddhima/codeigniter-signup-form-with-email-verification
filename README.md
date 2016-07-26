@@ -1,4 +1,4 @@
-# codeigniter-signup-form-with-email-verification
+# codeigniter signup form with email verification
 
 Simple registration form and login form created with bootstrap for the demostration of activating user account by email verification with following features.
 - Codeigniter 3.0
